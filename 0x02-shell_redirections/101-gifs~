@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -name *.gif -type f printf "%f\n" | rev | cut --complement -f 1,4 | rev
