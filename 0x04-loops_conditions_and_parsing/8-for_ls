@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# This script prints hours from 0 to 12
+# This script removes what is before the dash
+# and prints the list with that format
 LIST="$(ls)"
 for i in $LIST;
 do
