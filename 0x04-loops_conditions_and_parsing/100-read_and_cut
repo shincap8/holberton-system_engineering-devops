@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#displays the content of the file /etc/passwd
+List="$(cat /etc/passwd)"
+for i in $List
+do echo "$i" | cut -d ":" -f 1,3,6
+done
