@@ -3,8 +3,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 /**
- * infinite_while - infinite Loop
- * Return: return 0
+ * infinite_while - infinite while
+ * Return: always return 0
  */
 int infinite_while(void)
 {
@@ -21,15 +21,18 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t pid_child;
-	int child_status, zombies;
+	int zombies = 0;
 
-	for (zombies = 0; zombies < 5; zombies++)
+	while (zombies < 5)
 	{
 		pid_child = fork();
-		if (pid_child > 0)
-			printf("Zombie process created, PID: %d\n", pid_child);
-		else
+		if (pid_child == 0)
 			exit(0);
+		else
+		{
+			printf("Zombie process created, PID: %d\n", pid_child);
+		}
+		zombies++;
 	}
 	infinite_while();
 
