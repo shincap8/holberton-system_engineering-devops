@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scripts kills the script 7-highlander
+id="$(pgrep -f 7-highlander)"
+kill -9 "$id"
