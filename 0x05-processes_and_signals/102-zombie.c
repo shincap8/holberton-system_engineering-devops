@@ -26,14 +26,15 @@ int main(void)
 	while (zombies < 5)
 	{
 		pid_child = fork();
-		zombies++;
 		if (pid_child == 0)
 			exit(0);
 		else
 		{
 			printf("Zombie process created, PID: %d\n", pid_child);
 		}
+		zombies++;
 	}
 	infinite_while();
+
 	return (0);
 }
