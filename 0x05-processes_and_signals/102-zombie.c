@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
-#include <sys/wait.h>
 #include <unistd.h>
 /**
  * infinite_while- infinite while
@@ -17,8 +16,9 @@ int infinite_while(void)
 }
 /**
  * main - creation of 5 zombies
+ * Return: always 0
  */
-void main(void)
+int main(void)
 {
 	pid_t pid_child;
 	int child_status, zombies = 0;
@@ -35,4 +35,5 @@ void main(void)
 		}
 	}
 	infinite_while();
+	return (0);
 }
