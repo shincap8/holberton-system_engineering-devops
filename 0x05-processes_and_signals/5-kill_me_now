@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#displays To infinity and beyond indefinitely.
+#Kills the script in task 4 with kill.
 id="$(pgrep -f 4-to_infinity_and_beyond)"
 kill -15 "$id"
