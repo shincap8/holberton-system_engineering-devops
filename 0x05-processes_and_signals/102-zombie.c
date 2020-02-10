@@ -21,9 +21,9 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t pid_child;
-	int child_status, zombies = 0;
+	int child_status, zombies;
 
-	while (zombies < 5)
+	for (zombies = 0; zombies < 5; zombies++)
 	{
 		pid_child = fork();
 		if (pid_child == 0)
@@ -32,7 +32,6 @@ int main(void)
 		{
 			printf("Zombie process created, PID: %d\n", pid_child);
 		}
-		zombies++;
 	}
 	infinite_while();
 
