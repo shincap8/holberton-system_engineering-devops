@@ -3,9 +3,9 @@
 ## General Objectives
 --
 * OSI Model
-* * What it is
-* * How many layers it has
-* * How it is organized
+  * What it is
+  * How many layers it has
+  * How it is organized
 * What is a LAN
 * * Typical usage
 * * Typical geographical size
