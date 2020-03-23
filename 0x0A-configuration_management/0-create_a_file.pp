@@ -1,3 +1,4 @@
+#manifest that creates a file in /tmp.
 file {'/tmp/holberton':
   ensure  => 'present',
   owner   => 'www-data',
