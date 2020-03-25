@@ -6,5 +6,5 @@
 
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo echo -e '<html>\n<head>\n</head>\n<body>\nHolberton School\n</body>\n</html>' > /var/www/html/index.html
-sudo /etc/init.d/nginx start
+echo -e 'Holberton School' > /var/www/html/index.html
+service nginx start
