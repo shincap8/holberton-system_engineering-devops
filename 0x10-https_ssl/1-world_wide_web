@@ -12,5 +12,5 @@ then
     done
 else
     info "$2.$1"
-    echo "$get $subdomain" | awk '{ print "The subdomain " $6 " is a " $4 " record and points to " $5 }'
+    echo "$get $2" | awk '{ print "The subdomain " $6 " is a " $4 " record and points to " $5 }'
 fi
