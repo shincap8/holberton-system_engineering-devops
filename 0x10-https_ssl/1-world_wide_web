@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#script that will display information about subdomains.
+info () {
+    get=$(dig $1 | grep -A1 "ANSWER SECTION:" | tail -n 1)
+}
+options="www lb-01 web-01 web-02"
+if [ -z "$2" ];
+then
+    for subdomain in $options; do
+        info "$subdomain.$1"
+        echo "$get $subdomain" | awk '{ print "The subdomain " $6 " is a " $4 " record and points to " $5 }'
+    done
+else
+    info "$2.$1"
+    echo "$get $subdomain" | awk '{ print "The subdomain " $6 " is a " $4 " record and points to " $5 }'
+fi
