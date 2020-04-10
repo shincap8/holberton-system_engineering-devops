@@ -1,0 +1,4 @@
+sudo ufw allow 8080/tcp
+sudo iptables -t nat -I PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+sudo ufw enable
