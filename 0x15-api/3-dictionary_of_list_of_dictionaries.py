@@ -12,14 +12,14 @@ if __name__ == "__main__":
 
     file = "todo_all_employees.json"
     json_dict = {}
-    all_tasks = []
     for user in users:
+        all_tasks = []
         for task in todolist:
             if task["userId"] == user["id"]:
                 dictionary = {}
-                dictionary["task"] = task["title"]
-                dictionary["completed"] = task["completed"]
-                dictionary["username"] = user["username"]
+                dictionary["task"] = task.get("title")
+                dictionary["completed"] = task.get("completed")
+                dictionary["username"] = user.get("username")
                 all_tasks.append(dictionary)
         json_dict[user["id"]] = all_tasks
     with open(file, "w") as f:
