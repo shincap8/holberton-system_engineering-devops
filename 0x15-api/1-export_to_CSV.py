@@ -15,5 +15,5 @@ if __name__ == "__main__":
         task_writer = csv.writer(
             f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         for task in todolist:
-            task_writer.writerow([argv[1]] + [user['name']] +
+            task_writer.writerow([argv[1]] + [user['username']] +
                                  [task["completed"]] + [task["title"]])

@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 dictionary = {}
                 dictionary["task"] = task["title"]
                 dictionary["completed"] = task["completed"]
-                dictionary["username"] = user["name"]
+                dictionary["username"] = user["username"]
                 task_completed.append(dictionary)
         json_dict[user["name"]] = task_completed
     with open(file, "w") as f:
