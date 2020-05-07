@@ -21,7 +21,7 @@ def count_words(subreddit, word_list, after="", word_dict={}):
         words = words.split()
         for word in words:
             for w in word_list:
-                if w.lower() in word:
+                if w.lower() == word:
                     word_dict[word] += 1
     after = reddit['data']['after']
     if after is None:
