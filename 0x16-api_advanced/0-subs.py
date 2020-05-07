@@ -13,6 +13,7 @@ def number_of_subscribers(subreddit):
     reddit = requests.get(url, headers=headers).json()
     if 'error' in reddit:
         return 0
-    if type(reddit['data']['children'][0]['data']['subreddit_subscribers']) == int:
+    if type(reddit['data']['children'][0]['data']
+            ['subreddit_subscribers']) == int:
         return reddit['data']['children'][0]['data']['subreddit_subscribers']
     return 0
