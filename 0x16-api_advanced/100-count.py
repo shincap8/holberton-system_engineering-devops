@@ -32,12 +32,12 @@ def count_words(subreddit, word_list, after="", word_dict={}):
             ordered = 1
             for i in range(len(dict_sorted)):
                 if i < len(dict_sorted) - 1:
-                    if (dict_sorted[i][1] == dict_sorted[i+1][1]
-                            and dict_sorted[i][0] > dict_sorted[i+1][0]):
-                        ordered = 0
-                        aux = dict_sorted[i]
-                        dict_sorted[i] = dict_sorted[i+1]
-                        dict_sorted[i+1] = aux
+                    if dict_sorted[i][1] == dict_sorted[i+1][1]:
+                        if dict_sorted[i][0] > dict_sorted[i+1][0]:
+                            ordered = 0
+                            aux = dict_sorted[i]
+                            dict_sorted[i] = dict_sorted[i+1]
+                            dict_sorted[i+1] = aux
         for w in dict_sorted:
             if w[1] > 0:
                 print("{}: {}".format(w[0], w[1]))
