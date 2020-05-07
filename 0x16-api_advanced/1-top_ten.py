@@ -10,7 +10,7 @@ def top_ten(subreddit):
     headers = {'user-agent': 'Chrome/81.0.4044.129'}
     reddit = requests.get(url, headers=headers).json()
     if 'error' in reddit or len(reddit['data']['children']) == 0:
-        print (None)
+        print(None)
         return
     children = reddit['data']['children']
     count = 0
