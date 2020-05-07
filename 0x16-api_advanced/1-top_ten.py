@@ -7,9 +7,7 @@ import requests
 def top_ten(subreddit):
     """method to return the number of suscribers"""
     url = "https://reddit.com/r/" + subreddit + "/hot.json"
-    headers = {
-        'user-agent': 'Chrome/81.0.4044.129'
-    }
+    headers = {'user-agent': 'Chrome/81.0.4044.129'}
     reddit = requests.get(url, headers=headers).json()
     if 'error' in reddit or len(reddit['data']['children']) == 0:
         print (None)
