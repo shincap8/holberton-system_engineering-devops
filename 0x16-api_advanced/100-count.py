@@ -22,7 +22,7 @@ def count_words(subreddit, word_list, after="", word_dict={}):
         for word in words:
             for w in word_list:
                 if w.lower() == word:
-                    word_dict[word] += 1
+                    word_dict[w] += 1
     after = reddit['data']['after']
     if after is None:
         dict_sorted = sorted(word_dict.items(),
